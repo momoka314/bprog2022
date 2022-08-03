@@ -3,11 +3,19 @@ module First where
 double :: Int -> Int
 double x = x + x
 
+{-
+   double (1 + 3)
+-> (1 + 3) + (1 + 3)
+-}
+
 quadruple :: Int -> Int
 quadruple x = double (double x)
 
 factorial :: Integer -> Integer
 factorial n = product [1 .. n]
+
+
+
 
 average :: [Int] -> Int
 average xs = sum xs `div` length xs
