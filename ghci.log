@@ -1668,3 +1668,1405 @@ Ok, one module loaded.
 >>> 2022-08-03 17:34:45.906635269
 >>> :quit
 Leaving GHCi.
+GHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/nobsun/bprog2022/.ghci
+2022-08-04 13:11:14.001107432
+>>> :e src/First.hs
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  {-
+   7     double (1 + 3)
+   8  -> (1 + 3) + (1 + 3)
+   9  -}
+  10  
+  11  quadruple :: Int -> Int
+  12  quadruple x = double (double x)
+  13  
+  14  factorial :: Integer -> Integer
+  15  factorial n = product [1 .. n]
+  16  
+  17  average :: [Int] -> Int
+  18  average xs = sum xs `div` length xs
+  19  
+  20  ave :: [Int] -> Int
+  21  ave xs = div (sum xs) (length xs)
+  22  
+  23  myinit :: [a] -> [a]
+  24  myinit (x:[]) = []
+  25  myinit (x:xs) = x : (init xs)
+  26  
+  27  myconcat :: [[a]] -> [a]
+  28  myconcat xss = [ x | xs <- xss, x <- xs ]
+  29  
+  30  mylength :: [a] -> Int
+  31  mylength xs = sum [ 1 | _ <- xs ]
+Ok, no modules loaded.
+2022-08-04 13:11:28.366753392
+>>> :l src/First.hs
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 13:11:28.498278836
+>>> quadruple 3
+12
+2022-08-04 13:12:23.565352352
+>>> quadruple (quadruple 3)
+48
+2022-08-04 13:13:01.856564723
+>>> quadruple (2 + 3)
+20
+2022-08-04 13:13:43.305678497
+>>> quadruple 2 + 3
+11
+2022-08-04 13:14:07.443159545
+>>> :t 2 + 3
+2 + 3 :: Num a => a
+2022-08-04 13:42:10.545156039
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  {-
+   7     double (1 + 3)
+   8  -> (1 + 3) + (1 + 3)
+   9  -}
+  10  
+  11  quadruple :: Int -> Int
+  12  quadruple x = double (double x)
+  13  
+  14  factorial :: Integer -> Integer
+  15  factorial n = product [1 .. n]
+  16  
+  17  average :: [Int] -> Int
+  18  average xs = sum xs `div` length xs
+  19  
+  20  ave :: [Int] -> Int
+  21  ave xs = div (sum xs) (length xs)
+  22  
+  23  myinit :: [a] -> [a]
+  24  myinit (x:[]) = []
+  25  myinit (x:xs) = x : (init xs)
+  26  
+  27  myconcat :: [[a]] -> [a]
+  28  myconcat xss = [ x | xs <- xss, x <- xs ]
+  29  
+  30  mylength :: [a] -> Int
+  31  mylength xs = sum [ 1 | _ <- xs ]
+  32  
+  33  x :: Double
+  34  x = 1
+  35  y = 200
+  36  z = x * y
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 14:07:12.065645068
+>>> :t x
+x :: Double
+2022-08-04 14:07:38.346848596
+>>> :t y
+y :: Double
+2022-08-04 14:07:50.18005516
+>>> :t z
+z :: Double
+2022-08-04 14:08:07.075282439
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  {-
+   7     double (1 + 3)
+   8  -> (1 + 3) + (1 + 3)
+   9  -}
+  10  
+  11  quadruple :: Int -> Int
+  12  quadruple x = double (double x)
+  13  
+  14  factorial :: Integer -> Integer
+  15  factorial n = product [1 .. n]
+  16  
+  17  average :: [Int] -> Int
+  18  average xs = sum xs `div` length xs
+  19  
+  20  ave :: [Int] -> Int
+  21  ave xs = div (sum xs) (length xs)
+  22  
+  23  myinit :: [a] -> [a]
+  24  myinit (x:[]) = []
+  25  myinit (x:xs) = x : (init xs)
+  26  
+  27  myconcat :: [[a]] -> [a]
+  28  myconcat xss = [ x | xs <- xss, x <- xs ]
+  29  
+  30  mylength :: [a] -> Int
+  31  mylength xs = sum [ 1 | _ <- xs ]
+  32  
+  33  x :: Int
+  34  x = 1
+  35  y = 200
+  36  z = x * y
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 14:08:28.611680608
+>>> :t y
+y :: Int
+2022-08-04 14:08:37.572396652
+>>> :t z
+z :: Int
+2022-08-04 14:08:51.196912336
+>>> x + 1.23
+
+<interactive>:15:5: error:
+    • No instance for (Fractional Int) arising from the literal ‘1.23’
+    • In the second argument of ‘(+)’, namely ‘1.23’
+      In the expression: x + 1.23
+      In an equation for ‘it’: it = x + 1.23
+2022-08-04 14:10:02.39445966
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  {-
+   7     double (1 + 3)
+   8  -> (1 + 3) + (1 + 3)
+   9  -}
+  10  
+  11  quadruple :: Int -> Int
+  12  quadruple x = double (double x)
+  13  
+  14  factorial :: Integer -> Integer
+  15  factorial n = product [1 .. n]
+  16  
+  17  average :: [Int] -> Int
+  18  average xs = sum xs `div` length xs
+  19  
+  20  ave :: [Int] -> Int
+  21  ave xs = div (sum xs) (length xs)
+  22  
+  23  myinit :: [a] -> [a]
+  24  myinit (x:[]) = []
+  25  myinit (x:xs) = x : (init xs)
+  26  
+  27  myconcat :: [[a]] -> [a]
+  28  myconcat xss = [ x | xs <- xss, x <- xs ]
+  29  
+  30  mylength :: [a] -> Int
+  31  mylength xs = sum [ 1 | _ <- xs ]
+  32  
+  33  x :: Int
+  34  x = 1
+  35  y :: Integer
+  36  y = 200
+  37  z = x * y
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:37:9: error:
+    • Couldn't match expected type ‘Int’ with actual type ‘Integer’
+    • In the second argument of ‘(*)’, namely ‘y’
+      In the expression: x * y
+      In an equation for ‘z’: z = x * y
+   |
+37 | z = x * y
+   |         ^
+Failed, no modules loaded.
+2022-08-04 14:12:46.867446869
+>>> 
+2022-08-04 14:19:44.98198706
+>>> 
+2022-08-04 14:19:45.148932975
+>>> div 3 2
+1
+2022-08-04 14:19:50.413401051
+>>> divMod 3 2
+(1,1)
+2022-08-04 14:24:09.6374412
+>>> divMod 12 5
+(2,2)
+2022-08-04 14:24:33.764293106
+>>> divMod 12 7
+(1,5)
+2022-08-04 14:24:41.683817351
+>>> 12 `divMod` 7
+(1,5)
+2022-08-04 14:25:08.088741515
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y :: Integer
+  43  y = 200
+  44  z = x * y
+  45  
+  46  
+  47  {- -}
+  48  skew :: IO ()
+  49  skew = do
+  50     a <- getLine
+  51     b <- getLine
+  52     c <- getLine
+  53     putStrLn (c ++ a ++ a)
+  54  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:44:9: error:
+    • Couldn't match expected type ‘Int’ with actual type ‘Integer’
+    • In the second argument of ‘(*)’, namely ‘y’
+      In the expression: x * y
+      In an equation for ‘z’: z = x * y
+   |
+44 | z = x * y
+   |         ^
+Failed, no modules loaded.
+2022-08-04 14:55:18.654282196
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y = 200
+  43  z = x * y
+  44  
+  45  
+  46  {- -}
+  47  skew :: IO ()
+  48  skew = do
+  49     a <- getLine
+  50     b <- getLine
+  51     c <- getLine
+  52     putStrLn (c ++ a ++ a)
+  53  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 14:55:34.11910411
+>>> skew
+abc
+123
+DEF
+DEFabcabc
+2022-08-04 14:55:55.894773057
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y = 200
+  43  z = x * y
+  44  
+  45  
+  46  {- -}
+  47  skew :: IO ()
+  48  skew = do
+  49     a <- getLine
+  50     b <- getLine
+  51     c <- getLine
+  52     putStrLn (c ++ a ++ b)
+  53  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 14:56:23.833199571
+>>> skew
+abc
+123
+DEF
+DEFabc123
+2022-08-04 14:56:37.377394661
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y = 200
+  43  z = x * y
+  44  
+  45  
+  46  {- --
+  47  skew :: IO ()
+  48  skew = do
+  49     a <- getLine
+  50     b <- getLine
+  51     c <- getLine
+  52     putStrLn (f a b c)
+  53  
+  54     where
+  55        f a b c = c ++ a ++ b
+  56  -- -}
+  57  {- -}
+  58  skew = putStrLn =<< f <$> getLine <*> getLine <*> getLine
+  59     where
+  60        f a b c = c ++ a ++ c
+  61  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 14:59:22.471503363
+>>> skew
+abc
+123
+DEF
+DEFabcDEF
+2022-08-04 14:59:39.623878173
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y = 200
+  43  z = x * y
+  44  
+  45  
+  46  {- --
+  47  skew :: IO ()
+  48  skew = do
+  49     a <- getLine
+  50     b <- getLine
+  51     c <- getLine
+  52     putStrLn (f a b c)
+  53  
+  54     where
+  55        f a b c = c ++ a ++ b
+  56  -- -}
+  57  {- -}
+  58  skew = putStrLn =<< f <$> getLine <*> getLine <*> getLine
+  59     where
+  60        f a b c = c ++ a ++ b
+  61  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 14:59:49.192887458
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y = 200
+  43  z = x * y
+  44  
+  45  
+  46  {- --
+  47  skew :: IO ()
+  48  skew = do
+  49     a <- getLine
+  50     b <- getLine
+  51     c <- getLine
+  52     putStrLn (f a b c)
+  53  
+  54     where
+  55        f a b c = c ++ a ++ b
+  56  -- -}
+  57  {- -}
+  58  skew = putStrLn =<< f <$> getLine <*> getLine <*> getLine
+  59     where
+  60        f a b c = c ++ a ++ b
+  61  -- -}
+Ok, one module loaded.
+2022-08-04 14:59:52.266792689
+>>> skew
+abc
+123
+DEF
+DEFabc123
+2022-08-04 15:00:02.544469494
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y = 200
+  43  z = x * y
+  44  
+  45  
+  46  {- -}
+  47  skew :: IO ()
+  48  skew = do
+  49     a <- lz getLine
+  50     b <- lz getLine
+  51     c <- lz getLine
+  52     putStrLn (f a b c)
+  53  
+  54     where
+  55        f a b c = c ++ a ++ b
+  56  -- -}
+  57  {- --
+  58  skew = putStrLn =<< f <$> lz getLine <*> lz getLine <*> lz getLine
+  59     where
+  60        f a b c = c ++ a ++ b
+  61  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:49:9: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: a <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+49 |    a <- lz getLine
+   |         ^^^^^^^^^^
+
+src/First.hs:50:9: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: b <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+50 |    b <- lz getLine
+   |         ^^^^^^^^^^
+
+src/First.hs:51:9: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: c <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+51 |    c <- lz getLine
+   |         ^^^^^^^^^^
+
+src/First.hs:52:16: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the first argument of ‘f’, namely ‘a’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+52 |    putStrLn (f a b c)
+   |                ^
+
+src/First.hs:52:18: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the second argument of ‘f’, namely ‘b’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+52 |    putStrLn (f a b c)
+   |                  ^
+
+src/First.hs:52:20: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the third argument of ‘f’, namely ‘c’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+52 |    putStrLn (f a b c)
+   |                    ^
+Failed, no modules loaded.
+2022-08-04 15:02:48.142173033
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y = 200
+  43  z = x * y
+  44  
+  45  
+  46  {- -}
+  47  skew :: IO ()
+  48  skew = do
+  49        a <- lz getLine
+  50        b <- lz getLine
+  51        c <- lz getLine
+  52        putStrLn (f a b c)
+  53  
+  54     where
+  55        f a b c = c ++ a ++ b
+  56  -- -}
+  57  {- --
+  58  skew = putStrLn =<< f <$> lz getLine <*> lz getLine <*> lz getLine
+  59     where
+  60        f a b c = c ++ a ++ b
+  61  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:49:12: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: a <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+49 |       a <- lz getLine
+   |            ^^^^^^^^^^
+
+src/First.hs:50:12: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: b <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+50 |       b <- lz getLine
+   |            ^^^^^^^^^^
+
+src/First.hs:51:12: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: c <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+51 |       c <- lz getLine
+   |            ^^^^^^^^^^
+
+src/First.hs:52:19: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the first argument of ‘f’, namely ‘a’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+52 |       putStrLn (f a b c)
+   |                   ^
+
+src/First.hs:52:21: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the second argument of ‘f’, namely ‘b’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+52 |       putStrLn (f a b c)
+   |                     ^
+
+src/First.hs:52:23: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the third argument of ‘f’, namely ‘c’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+52 |       putStrLn (f a b c)
+   |                       ^
+Failed, no modules loaded.
+2022-08-04 15:03:14.103478804
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz = unsafePerformIO
+   6  
+   7  double :: Int -> Int -- 型シグネチャー
+   8  double x = x + x
+   9  
+  10  {-
+  11     double (1 + 3)
+  12  -> (1 + 3) + (1 + 3)
+  13  -}
+  14  
+  15  quadruple :: Int -> Int
+  16  quadruple x = double (double x)
+  17  
+  18  factorial :: Integer -> Integer
+  19  factorial n = product [1 .. n]
+  20  
+  21  average :: [Int] -> Int
+  22  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  23  
+  24  ave :: [Int] -> Int
+  25  ave xs = div (sum xs) (length xs)
+  26  
+  27  ave2 :: [Int] -> Int
+  28  ave2 = \ xs -> div (sum xs) (length xs)
+  29  
+  30  myinit :: [a] -> [a]
+  31  myinit (x:[]) = []
+  32  myinit (x:xs) = x : (init xs)
+  33  
+  34  myconcat :: [[a]] -> [a]
+  35  myconcat xss = [ x | xs <- xss, x <- xs ]
+  36  
+  37  mylength :: [a] -> Int
+  38  mylength xs = sum [ 1 | _ <- xs ]
+  39  
+  40  x :: Int
+  41  x = 1
+  42  y = 200
+  43  z = x * y
+  44  
+  45  
+  46  {- -}
+  47  skew :: IO ()
+  48  skew = do { a <- lz getLine
+  49            ; b <- lz getLine
+  50            ; c <- lz getLine
+  51            ; putStrLn (f a b c)
+  52            }
+  53     where
+  54        f a b c = c ++ a ++ b
+  55  -- -}
+  56  {- --
+  57  skew = putStrLn =<< f <$> lz getLine <*> lz getLine <*> lz getLine
+  58     where
+  59        f a b c = c ++ a ++ b
+  60  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:48:18: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: a <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+48 | skew = do { a <- lz getLine
+   |                  ^^^^^^^^^^
+
+src/First.hs:49:18: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: b <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+49 |           ; b <- lz getLine
+   |                  ^^^^^^^^^^
+
+src/First.hs:50:18: error:
+    • Couldn't match type ‘[]’ with ‘IO’
+      Expected: IO Char
+        Actual: String
+    • In a stmt of a 'do' block: c <- lz getLine
+      In the expression:
+        do a <- lz getLine
+           b <- lz getLine
+           c <- lz getLine
+           putStrLn (f a b c)
+      In an equation for ‘skew’:
+          skew
+            = do a <- lz getLine
+                 b <- lz getLine
+                 c <- lz getLine
+                 ....
+            where
+                f a b c = c ++ a ++ b
+   |
+50 |           ; c <- lz getLine
+   |                  ^^^^^^^^^^
+
+src/First.hs:51:25: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the first argument of ‘f’, namely ‘a’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+51 |           ; putStrLn (f a b c)
+   |                         ^
+
+src/First.hs:51:27: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the second argument of ‘f’, namely ‘b’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+51 |           ; putStrLn (f a b c)
+   |                           ^
+
+src/First.hs:51:29: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the third argument of ‘f’, namely ‘c’
+      In the first argument of ‘putStrLn’, namely ‘(f a b c)’
+      In a stmt of a 'do' block: putStrLn (f a b c)
+   |
+51 |           ; putStrLn (f a b c)
+   |                             ^
+Failed, no modules loaded.
+2022-08-04 15:05:05.490699279
+>>> :e
+   1  module First where
+   2  
+   3  import System.IO.Unsafe
+   4  
+   5  lz :: IO a -> IO a
+   6  lz = unsafeInterleaveIO
+   7  
+   8  double :: Int -> Int -- 型シグネチャー
+   9  double x = x + x
+  10  
+  11  {-
+  12     double (1 + 3)
+  13  -> (1 + 3) + (1 + 3)
+  14  -}
+  15  
+  16  quadruple :: Int -> Int
+  17  quadruple x = double (double x)
+  18  
+  19  factorial :: Integer -> Integer
+  20  factorial n = product [1 .. n]
+  21  
+  22  average :: [Int] -> Int
+  23  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  24  
+  25  ave :: [Int] -> Int
+  26  ave xs = div (sum xs) (length xs)
+  27  
+  28  ave2 :: [Int] -> Int
+  29  ave2 = \ xs -> div (sum xs) (length xs)
+  30  
+  31  myinit :: [a] -> [a]
+  32  myinit (x:[]) = []
+  33  myinit (x:xs) = x : (init xs)
+  34  
+  35  myconcat :: [[a]] -> [a]
+  36  myconcat xss = [ x | xs <- xss, x <- xs ]
+  37  
+  38  mylength :: [a] -> Int
+  39  mylength xs = sum [ 1 | _ <- xs ]
+  40  
+  41  x :: Int
+  42  x = 1
+  43  y = 200
+  44  z = x * y
+  45  
+  46  
+  47  {- -}
+  48  skew :: IO ()
+  49  skew = do { a <- lz getLine
+  50            ; b <- lz getLine
+  51            ; c <- lz getLine
+  52            ; putStrLn (f a b c)
+  53            }
+  54     where
+  55        f a b c = c ++ a ++ b
+  56  -- -}
+  57  {- --
+  58  skew = putStrLn =<< f <$> lz getLine <*> lz getLine <*> lz getLine
+  59     where
+  60        f a b c = c ++ a ++ b
+  61  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 15:06:50.762757618
+>>> skew
+abc
+abc123
+123DEF
+DEF
+2022-08-04 15:10:14.567517451
+>>> :e
+   1  {-# LANGUAGE BangPatterns #-}
+   2  module First where
+   3  
+   4  import System.IO.Unsafe
+   5  
+   6  lz :: IO a -> IO a
+   7  lz = unsafeInterleaveIO
+   8  
+   9  double :: Int -> Int -- 型シグネチャー
+  10  double x = x + x
+  11  
+  12  {-
+  13     double (1 + 3)
+  14  -> (1 + 3) + (1 + 3)
+  15  -}
+  16  
+  17  quadruple :: Int -> Int
+  18  quadruple x = double (double x)
+  19  
+  20  factorial :: Integer -> Integer
+  21  factorial n = product [1 .. n]
+  22  
+  23  average :: [Int] -> Int
+  24  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  25  
+  26  ave :: [Int] -> Int
+  27  ave xs = div (sum xs) (length xs)
+  28  
+  29  ave2 :: [Int] -> Int
+  30  ave2 = \ xs -> div (sum xs) (length xs)
+  31  
+  32  myinit :: [a] -> [a]
+  33  myinit (x:[]) = []
+  34  myinit (x:xs) = x : (init xs)
+  35  
+  36  myconcat :: [[a]] -> [a]
+  37  myconcat xss = [ x | xs <- xss, x <- xs ]
+  38  
+  39  mylength :: [a] -> Int
+  40  mylength xs = sum [ 1 | _ <- xs ]
+  41  
+  42  x :: Int
+  43  x = 1
+  44  y = 200
+  45  z = x * y
+  46  
+  47  
+  48  {- -}
+  49  skew :: IO ()
+  50  skew = do { a <- lz getLine
+  51            ; b <- lz getLine
+  52            ; c <- lz getLine
+  53            ; putStrLn (f a b c)
+  54            }
+  55     where
+  56        f a b c = c ++ a ++ b
+  57  -- -}
+  58  {- --
+  59  skew = putStrLn =<< f <$> lz getLine <*> lz getLine <*> lz getLine
+  60     where
+  61        f a b c = c ++ a ++ b
+  62  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 15:11:48.605264471
+>>> skew
+abc
+abcdef
+def
+
+2022-08-04 15:13:45.327182228
+>>> :e
+   1  {-# LANGUAGE BangPatterns #-}
+   2  module First where
+   3  
+   4  import System.IO.Unsafe
+   5  
+   6  lz :: IO a -> IO a
+   7  lz = unsafeInterleaveIO
+   8  
+   9  double :: Int -> Int -- 型シグネチャー
+  10  double x = x + x
+  11  
+  12  {-
+  13     double (1 + 3)
+  14  -> (1 + 3) + (1 + 3)
+  15  -}
+  16  
+  17  quadruple :: Int -> Int
+  18  quadruple x = double (double x)
+  19  
+  20  factorial :: Integer -> Integer
+  21  factorial n = product [1 .. n]
+  22  
+  23  average :: [Int] -> Int
+  24  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  25  
+  26  ave :: [Int] -> Int
+  27  ave xs = div (sum xs) (length xs)
+  28  
+  29  ave2 :: [Int] -> Int
+  30  ave2 = \ xs -> div (sum xs) (length xs)
+  31  
+  32  myinit :: [a] -> [a]
+  33  myinit (x:[]) = []
+  34  myinit (x:xs) = x : (init xs)
+  35  
+  36  myconcat :: [[a]] -> [a]
+  37  myconcat xss = [ x | xs <- xss, x <- xs ]
+  38  
+  39  mylength :: [a] -> Int
+  40  mylength xs = sum [ 1 | _ <- xs ]
+  41  
+  42  x :: Int
+  43  x = 1
+  44  y = 200
+  45  z = x * y
+  46  
+  47  
+  48  {- -}
+  49  skew :: IO ()
+  50  skew = do { a <- lz getLine
+  51            ; b <- lz getLine
+  52            ; c <- lz getLine
+  53            ; putStrLn (f a b c)
+  54            }
+  55     where
+  56        f !a !b !c = c ++ a ++ b
+  57  -- -}
+  58  {- --
+  59  skew = putStrLn =<< f <$> lz getLine <*> lz getLine <*> lz getLine
+  60     where
+  61        f a b c = c ++ a ++ b
+  62  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 15:13:47.268758866
+>>> skew
+abc
+123
+DEF
+DEFabc123
+2022-08-04 15:14:05.745056853
+>>> :e
+   1  {-# LANGUAGE BangPatterns #-}
+   2  module First where
+   3  
+   4  import System.IO.Unsafe
+   5  
+   6  lz :: IO a -> IO a
+   7  lz = unsafeInterleaveIO
+   8  
+   9  double :: Int -> Int -- 型シグネチャー
+  10  double x = x + x
+  11  
+  12  {-
+  13     double (1 + 3)
+  14  -> (1 + 3) + (1 + 3)
+  15  -}
+  16  
+  17  quadruple :: Int -> Int
+  18  quadruple x = double (double x)
+  19  
+  20  factorial :: Integer -> Integer
+  21  factorial n = product [1 .. n]
+  22  
+  23  average :: [Int] -> Int
+  24  average xs = sum xs `div` length xs -- (sum xs) `div` (length xs)
+  25  
+  26  ave :: [Int] -> Int
+  27  ave xs = div (sum xs) (length xs)
+  28  
+  29  ave2 :: [Int] -> Int
+  30  ave2 = \ xs -> div (sum xs) (length xs)
+  31  
+  32  myinit :: [a] -> [a]
+  33  myinit (x:[]) = []
+  34  myinit (x:xs) = x : (init xs)
+  35  
+  36  myconcat :: [[a]] -> [a]
+  37  myconcat xss = [ x | xs <- xss, x <- xs ]
+  38  
+  39  mylength :: [a] -> Int
+  40  mylength xs = sum [ 1 | _ <- xs ]
+  41  
+  42  x :: Int
+  43  x = 1
+  44  y = 200
+  45  z = x * y
+  46  
+  47  
+  48  {- --
+  49  skew :: IO ()
+  50  skew = do { a <- lz getLine
+  51            ; b <- lz getLine
+  52            ; c <- lz getLine
+  53            ; putStrLn (f a b c)
+  54            }
+  55     where
+  56        f !a !b !c = c ++ a ++ b
+  57  -- -}
+  58  {- -}
+  59  skew = putStrLn =<< f <$> lz getLine <*> lz getLine <*> lz getLine
+  60     where
+  61        f !a !b !c = c ++ a ++ b
+  62  -- -}
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-08-04 15:15:52.294933704
+>>> skew
+abc
+123
+DEF
+DEFabc123
+2022-08-04 15:16:01.884976218
+>>> myconcat [[1,2],[],[3,4,5,100]]
+[1,2,3,4,5,100]
+2022-08-04 15:19:49.370372122
+>>> xs = "abcdef"
+2022-08-04 15:45:14.994213404
+>>> xs
+"abcdef"
+2022-08-04 15:45:20.722954794
+>>> [ 1 | _ <- xs ]
+[1,1,1,1,1,1]
+2022-08-04 15:46:17.782097028
+>>> sum it
+6
+2022-08-04 15:46:26.293310392
+>>> 
