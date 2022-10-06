@@ -1,0 +1,157 @@
+Script started on 2022-10-06 15:05:28+09:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="108" LINES="13"]
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ lghci src/Rec.hs
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/nobsun/bprog2022/.ghci
+[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:06:10.54651721
+[?1h=>>> :q
+[?1l>Leaving GHCi.
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ cp ../cs2022/start_programming .
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ exit
+exit
+
+Script done on 2022-10-06 15:08:07+09:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2022-10-06 15:08:19+09:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="108" LINES="13"]
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ lghci src/Rec.hs
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/nobsun/bprog2022/.ghci
+[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:08:49.060632579
+[?1h=>>> product []
+[?1l>*** Exception: src/Rec.hs:7:1-31: Non-exhaustive patterns in function product
+
+2022-10-06 15:13:09.665870824
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:13:42.06727428
+[?1h=>>> product []
+[?1l>1
+2022-10-06 15:13:52.194297912
+[?1h=>>> product [3,1,4]
+[?1l>12
+2022-10-06 15:14:10.020039712
+[?1h=>>> :rf[K
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:15:02.141004591
+[?1h=>>> :r[2Dproduct [3,1,4]
+[?1l>0
+2022-10-06 15:15:10.845062908
+[?1h=>>> :i Num
+[?1l>type Num :: * -> Constraint
+class Num a where
+  (+) :: a -> a -> a
+  (-) :: a -> a -> a
+  (*) :: a -> a -> a
+  negate :: a -> a
+  abs :: a -> a
+  signum :: a -> a
+  fromInteger :: Integer -> a
+  {-# MINIMAL (+), (*), abs, signum, fromInteger, (negate | (-)) #-}
+  	-- Defined in ‘GHC.Num’
+instance Num NominalDiffTime
+  -- Defined in ‘time-1.9.3:Data.Time.Clock.Internal.NominalDiffTime’
+instance Num DiffTime
+  -- Defined in ‘time-1.9.3:Data.Time.Clock.Internal.DiffTime’
+instance Num Word -- Defined in ‘GHC.Num’
+instance Num Integer -- Defined in ‘GHC.Num’
+instance Num Int -- Defined in ‘GHC.Num’
+instance Num Float -- Defined in ‘GHC.Float’
+instance Num Double -- Defined in ‘GHC.Float’
+2022-10-06 15:19:57.086148386
+[?1h=>>> >>> :t 3
+[?1l>3 :: Num p => p
+2022-10-06 15:24:36.739124624
+[?1h=>>> 
+[?1l>2022-10-06 15:24:36.97016742
+[?1h=>>> >>> >>> >>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+
+[;1msrc/Rec.hs:6:18: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Num a) arising from the literal ‘1’
+      Possible fix:
+        add (Num a) to the context of
+          the type signature for:
+            product :: forall a. [a] -> a
+    • In the expression: 1
+      In an equation for ‘product’: product [] = 1[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m6 |[0m[0m product []     = [;1m[31m1[0m[0m
+[;1m[34m  |[0m[0m[;1m[31m                  ^[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-10-06 15:30:02.581062382
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:41:44.006094773
+[?1h=>>> drop 2 [3,1,4,1,5]
+[?1l>[4,1,5]
+2022-10-06 15:42:07.350031393
+[?1h=>>> d[Kdrop 2 [3,1,4,1,5] [3,1,4,1,5][K[12D5 [3,1,4,1,5][12D
+[?1l>[]
+2022-10-06 15:42:29.69172207
+[?1h=>>> drop 5 [3,1,4,1,5] [3,1,4,1,5][K[12D6 [3,1,4,1,5][12D
+[?1l>[]
+2022-10-06 15:42:39.013079875
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:47:15.319854068
+[?1h=>>> :r[2Ddrop 6 [3,1,4,1,5][13D5 [3,1,4,1,5][13D2 [3,1,4,1,5]
+[?1l>[4,1,5]
+2022-10-06 15:47:25.623949096
+[?1h=>>> hee[Kad []
+[?1l>*** Exception: Prelude.head: empty list
+2022-10-06 15:51:58.218490154
+[?1h=>>> tail []
+[?1l>*** Exception: Prelude.tail: empty list
+2022-10-06 15:52:13.53115078
+[?1h=>>> last []
+[?1l>*** Exception: Prelude.last: empty list
+2022-10-06 15:54:25.7776895
+[?1h=>>> init []
+[?1l>
+[;1m<interactive>:20:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m Variable not in scope: init :: [a0] -> t[0m[0m
+[0m[0m[0m2022-10-06 15:54:34.170942536
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 16:01:07.299490906
+[?1h=>>> init [3,1,4,1,5]
+[?1l>[3,1,4,1]
+2022-10-06 16:01:19.296082161
+[?1h=>>> init []
+[?1l>*** Exception: karaya-
+CallStack (from HasCallStack):
+  error, called at src/Rec.hs:15:12 in main:Rec
+2022-10-06 16:03:19.325933343
+[?1h=>>> >>> >>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 16:10:23.33735541
+[?1h=>>> fac 10
+[?1l>3628800
+2022-10-06 16:10:31.585927662
+[?1h=>>> fac (-2)
+[?1l>*** Exception: negative number
+CallStack (from HasCallStack):
+  error, called at src/Rec.hs:23:19 in main:Rec
+2022-10-06 16:10:44.986158558
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 16:11:09.016637145
+[?1h=>>> :r[Kr[Kn[K[Kfac (-1)
+[?1l>0
+2022-10-06 16:11:39.060773176
+[?1h=>>> >>> >>> >>> git add .
+[?1l>
+[;1m<interactive>:29:10: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    parse error (possibly incorrect indentation or mismatched brackets)[0m[0m
+[0m[0m[0m2022-10-06 16:17:17.519464266
+[?1h=>>> :q
+[?1l>Leaving GHCi.
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ git add .
