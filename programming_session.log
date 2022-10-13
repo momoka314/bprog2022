@@ -155,3 +155,70 @@ Ok, one module loaded.
 [?1h=>>> :q
 [?1l>Leaving GHCi.
 ]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ git add .
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ git commit -m "1006"
+[main f55c965] 1006
+ 3 files changed, 181 insertions(+), 1 deletion(-)
+ create mode 100644 programming_session.log
+ create mode 100644 src/Rec.hs
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ git push
+Enumerating objects: 22, done.
+Counting objects:   4% (1/22)Counting objects:   9% (2/22)Counting objects:  13% (3/22)Counting objects:  18% (4/22)Counting objects:  22% (5/22)Counting objects:  27% (6/22)Counting objects:  31% (7/22)Counting objects:  36% (8/22)Counting objects:  40% (9/22)Counting objects:  45% (10/22)Counting objects:  50% (11/22)Counting objects:  54% (12/22)Counting objects:  59% (13/22)Counting objects:  63% (14/22)Counting objects:  68% (15/22)Counting objects:  72% (16/22)Counting objects:  77% (17/22)Counting objects:  81% (18/22)Counting objects:  86% (19/22)Counting objects:  90% (20/22)Counting objects:  95% (21/22)Counting objects: 100% (22/22)Counting objects: 100% (22/22), done.
+Delta compression using up to 8 threads
+Compressing objects:   6% (1/15)Compressing objects:  13% (2/15)Compressing objects:  20% (3/15)Compressing objects:  26% (4/15)Compressing objects:  33% (5/15)Compressing objects:  40% (6/15)Compressing objects:  46% (7/15)Compressing objects:  53% (8/15)Compressing objects:  60% (9/15)Compressing objects:  66% (10/15)Compressing objects:  73% (11/15)Compressing objects:  80% (12/15)Compressing objects:  86% (13/15)Compressing objects:  93% (14/15)Compressing objects: 100% (15/15)Compressing objects: 100% (15/15), done.
+Writing objects:   6% (1/16)Writing objects:  12% (2/16)Writing objects:  18% (3/16)Writing objects:  25% (4/16)Writing objects:  31% (5/16)Writing objects:  37% (6/16)Writing objects:  43% (7/16)Writing objects:  50% (8/16)Writing objects:  56% (9/16)Writing objects:  62% (10/16)Writing objects:  68% (11/16)Writing objects:  75% (12/16)Writing objects:  81% (13/16)Writing objects:  87% (14/16)Writing objects:  93% (15/16)Writing objects: 100% (16/16)Writing objects: 100% (16/16), 7.66 KiB | 174.00 KiB/s, done.
+Total 16 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/6)[Kremote: Resolving deltas:  16% (1/6)[Kremote: Resolving deltas:  33% (2/6)[Kremote: Resolving deltas:  50% (3/6)[Kremote: Resolving deltas:  66% (4/6)[Kremote: Resolving deltas:  83% (5/6)[Kremote: Resolving deltas: 100% (6/6)[Kremote: Resolving deltas: 100% (6/6), completed with 4 local objects.[K
+To github.com:nobsun/bprog2022
+   a6893d0..f55c965  main -> main
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ Script started on 2022-10-13 15:09:36+09:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="111" LINES="13"]
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ lghci src/Rec.hs
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/nobsun/bprog2022/.ghci
+[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-13 15:09:46.766691027
+[?1h=>>> msort [3,1,4,1,5,6,5,[K[K[K[K9,2,6,5,3,5,8,93,1,4,1,5,9,2,6,5,3,5,8,9[K[25D3,1,4,1,5,9,2,6,5,3,5,8,9[K[25D3,1,4,1,5,9,2,6,5,3,5,8,9[K[25D3,1,4,1,5,9,2,6,5,3,5,8,9[K[25D3,1,4,1,5,9,2,6,5,3,5,8,9[K[25D3,1,4,1,5,9,2,6,5,3,5,8,9[K[25D3,1,4,1,5,9,2,6,5,3,5,8,9[K[25D,1,4,1,5,9,2,6,5,3,5,8,9[K[24D1,4,1,5,9,2,6,5,3,5,8,9[K[23D,4,1,5,9,2,6,5,3,5,8,9[K[22D4,1,5,9,2,6,5,3,5,8,9[K[21D,1,5,9,2,6,5,3,5,8,9[K[20D1,5,9,2,6,5,3,5,8,9[K[19D,5,9,2,6,5,3,5,8,9[K[18D5,9,2,6,5,3,5,8,9[K[17D,9,2,6,5,3,5,8,9[K[16D9,2,6,5,3,5,8,9[K[15D,2,6,5,3,5,8,9[K[14D2,6,5,3,5,8,9[K[13D,6,5,3,5,8,9[K[12D6,5,3,5,8,9[K[11D,5,3,5,8,9[K[10D5,3,5,8,9[K[9D,3,5,8,9[K[8D3,5,8,9[K[7D,5,8,9[K[6D5,8,9[K[5D,8,9[K[4D8,9[K[3D,9[K[2D9[K[K:r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-13 15:12:09.328209873
+[?1h=>>> sorttest
+[?1l>[3,1,4,1,5,9,2,6,5,3,5,8,9]
+2022-10-13 15:12:14.158997902
+[?1h=>>> msort st[Korttest
+[?1l>[1,1,2,3,3,4,5,5,5,6,8,9,9]
+2022-10-13 15:13:44.072500912
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-13 15:50:01.123173786
+[?1h=>>> twice inc 0
+[?1l>2
+2022-10-13 15:50:37.680305836
+[?1h=>>> w[Ktwice twice i[Kinc 0
+[?1l>4
+2022-10-13 15:52:12.395265466
+[?1h=>>> twice twice twice inc 0
+[?1l>16
+2022-10-13 15:53:17.027408867
+[?1h=>>> twice twice twice twice inc 0
+[?1l>65536
+2022-10-13 15:57:27.589572717
+[?1h=>>> twice twice twice twice inc 0ttwice inc 0[11Dwtwice inc 0[11Ditwice inc 0[11Dctwice inc 0[11Detwice inc 0[11D twice inc 0[11D
+[?1l>*** Exception: stack overflow
+2022-10-13 15:58:59.77485418
+[?1h=>>> :r
+[?1l>Ok, one module loaded.
+2022-10-13 16:05:53.611713502
+[?1h=>>> map inc te[K[Ksorttest[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K:r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-13 16:06:35.208095091
+[?1h=>>> sample
+[?1l>[3,1,4,1,5,9,2,6,5,3,5,8,9]
+2022-10-13 16:06:37.097523161
+[?1h=>>> map inc sample
+[?1l>[4,2,5,2,6,10,3,7,6,4,6,9,10]
+2022-10-13 16:07:08.039954926
+[?1h=>>> :q
+[?1l>Leaving GHCi.
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ git add .
