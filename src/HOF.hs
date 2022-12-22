@@ -1,6 +1,8 @@
 module HOF where
 
 import Data.Char
+import Data.List
+import Data.Ord
 
 type Bit = Int
 
@@ -50,3 +52,52 @@ decode = map (chr . bin2int) . chop8
 chop8 :: [Bit] -> [[Bit]]
 chop8 [] = []
 chop8 xs = take 8 xs : chop8 (drop 8 xs)
+
+--
+
+votes :: [String]
+votes = ["Red", "Blue", "Green", "Blue", "Blue", "Red"]
+
+results :: Ord a => [a] -> [(a, Int)]
+results = sortBy (flip (comparing snd)) 
+        . map conv
+        . group . sort
+
+conv :: [a] -> (a, Int)
+conv (x:xs) = (x, length (x:xs))
+conv []     = error "impossible!"
+
+winner :: Ord a => [a] -> a
+winner = fst . head . results
+
+--
+
+ballots :: [[String]]
+ballots
+    = [["Red", "Green"]
+      ,["Blue"]
+      ,["Green", "Red", "Blue"]
+      ,["Blue", "Green", "Red"]
+      ,["Green"]
+      ]
+
+results' :: Ord a => [a] -> [(a, Int)]
+results' = sortBy (comparing snd)
+         . map conv
+         . group . sort
+
+rmempty :: [[a]] -> [[a]]
+rmempty xss = [ xs | xs@(_:_) <- xss ]
+-- remempty = filter (not . null)
+
+elim :: Eq a => a -> [[a]] -> [[a]]
+elim x = map (filter (/= x))
+
+rank :: Ord a => [[a]] -> [a]
+rank = map fst . results' . map head
+
+winner' :: Ord a => [[a]] -> a
+winner' bs = case rank (filter (not . null) bs) of
+    [c]    -> c
+    (c:cs) -> winner' (elim c bs)
+    _      -> error "impossible!"

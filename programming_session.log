@@ -608,3 +608,150 @@ Ok, one module loaded.
 [?1h=>>> :q
 [?1l>Leaving GHCi.
 ]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ git add .
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ git commit -m "1117"
+[main a95f0dc] 1117
+ 2 files changed, 189 insertions(+), 7 deletions(-)
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ git push
+Enumerating objects: 9, done.
+Counting objects:  11% (1/9)Counting objects:  22% (2/9)Counting objects:  33% (3/9)Counting objects:  44% (4/9)Counting objects:  55% (5/9)Counting objects:  66% (6/9)Counting objects:  77% (7/9)Counting objects:  88% (8/9)Counting objects: 100% (9/9)Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects:  20% (1/5)Compressing objects:  40% (2/5)Compressing objects:  60% (3/5)Compressing objects:  80% (4/5)Compressing objects: 100% (5/5)Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)Writing objects:  40% (2/5)Writing objects:  60% (3/5)Writing objects:  80% (4/5)Writing objects: 100% (5/5)Writing objects: 100% (5/5), 8.84 KiB | 4.42 MiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To github.com:nobsun/bprog2022
+   01a3132..a95f0dc  main -> main
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ Script started on 2022-11-24 14:50:58+09:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="50" LINES="31"]
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ lghci
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/nobsun/bprog2022/.ghci
+2022-11-24 14:51:05.424667829
+[?1h=>>> :loa[K[K src/HOF.hs
+[?1l>[1 of 1] Compiling HOF              ( src/HOF.hs, interpreted )
+Ok, one module loaded.
+2022-11-24 14:51:13.31674001
+[?1h=>>> encode "Haskell"
+[?1l>[0,0,0,1,0,0,1,0,1,0,0,0,0,1,1,0,1,1,0,0,1,1,1,0,1,1,0,1,0,1,1,0,1,0,1,0,0,1,1,0,0,0,1,1,0,1,1,0,0,0,1,1,0,1,1,0]
+2022-11-24 14:51:38.423638201
+[?1h=>>> decode it
+[?1l>"Haskell"
+2022-11-24 14:51:54.533404133
+[?1h=>>> :i IO String
+[?1l>type IO :: * -> *
+newtype IO a
+  = GHC.Types.IO (GHC.Prim.State# GHC.Prim.RealWorld
+                  -> (# GHC.Prim.State# GHC.Prim.RealWorld, a #))
+  	-- Defined in ‘GHC.Types’
+instance Applicative IO -- Defined in ‘GHC.Base’
+instance Functor IO -- Defined in ‘GHC.Base’
+instance Monad IO -- Defined in ‘GHC.Base’
+instance Monoid a => Monoid (IO a) -- Defined in ‘GHC.Base’
+instance Semigroup a => Semigroup (IO a) -- Defined in ‘GHC.Base’
+instance MonadFail IO -- Defined in ‘Control.Monad.Fail’
+type String :: *
+type String = [Char]
+  	-- Defined in ‘GHC.Base’
+2022-11-24 15:19:26.392613804
+[?1h=>>> >>> >>> H[K:i Handle
+[?1l>
+[;1m<interactive>:1:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m Not in scope: ‘Handle’[0m[0m
+[0m[0m[0m2022-11-24 15:20:18.839511803
+[?1h=>>> import Systeml[K.IO
+[?1l>2022-11-24 15:20:28.356519772
+[?1h=>>> :i Handle
+[?1l>type Handle :: *
+data Handle
+  = GHC.IO.Handle.Types.FileHandle FilePath
+                                   {-# UNPACK #-}(GHC.MVar.MVar GHC.IO.Handle.Types.Handle__)
+  | GHC.IO.Handle.Types.DuplexHandle FilePath
+                                     {-# UNPACK #-}(GHC.MVar.MVar GHC.IO.Handle.Types.Handle__)
+                                     {-# UNPACK #-}(GHC.MVar.MVar GHC.IO.Handle.Types.Handle__)
+  	-- Defined in ‘GHC.IO.Handle.Types’
+instance Eq Handle -- Defined in ‘GHC.IO.Handle.Types’
+instance Show Handle -- Defined in ‘GHC.IO.Handle.Types’
+2022-11-24 15:20:34.423958
+[?1h=>>> :i IO
+[?1l>type IO :: * -> *
+newtype IO a
+  = GHC.Types.IO (GHC.Prim.State# GHC.Prim.RealWorld
+                  -> (# GHC.Prim.State# GHC.Prim.RealWorld, a #))
+  	-- Defined in ‘GHC.Types’
+instance Applicative IO -- Defined in ‘GHC.Base’
+instance Functor IO -- Defined in ‘GHC.Base’
+instance Monad IO -- Defined in ‘GHC.Base’
+instance Monoid a => Monoid (IO a) -- Defined in ‘GHC.Base’
+instance Semigroup a => Semigroup (IO a) -- Defined in ‘GHC.Base’
+instance MonadFail IO -- Defined in ‘Control.Monad.Fail’
+2022-11-24 15:20:48.284860395
+[?1h=>>> :i IO String
+[?1l>type IO :: * -> *
+newtype IO a
+  = GHC.Types.IO (GHC.Prim.State# GHC.Prim.RealWorld
+                  -> (# GHC.Prim.State# GHC.Prim.RealWorld, a #))
+  	-- Defined in ‘GHC.Types’
+instance Applicative IO -- Defined in ‘GHC.Base’
+instance Functor IO -- Defined in ‘GHC.Base’
+instance Monad IO -- Defined in ‘GHC.Base’
+instance Monoid a => Monoid (IO a) -- Defined in ‘GHC.Base’
+instance Semigroup a => Semigroup (IO a) -- Defined in ‘GHC.Base’
+instance MonadFail IO -- Defined in ‘Control.Monad.Fail’
+type String :: *
+type String = [Char]
+  	-- Defined in ‘GHC.Base’
+2022-11-24 15:21:23.717707435
+[?1h=>>> True == False
+[?1l>False
+2022-11-24 15:37:46.226954451
+[?1h=>>> True < False
+[?1l>False
+2022-11-24 15:37:55.081207022
+[?1h=>>> True > False
+[?1l>True
+2022-11-24 15:38:01.419902679
+[?1h=>>> >>> Script started on 2022-11-24 15:58:12+09:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="50" LINES="31"]
+]0;nobsun@yoga6inzai: ~/bprog2022[01;32mnobsun@yoga6inzai[00m:[01;34m~/bprog2022[00m$ lghci HO[K[Ksrc/HOP[KF.hs
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/nobsun/bprog2022/.ghci
+[1 of 1] Compiling HOF              ( src/HOF.hs, interpreted )
+Ok, one module loaded.
+2022-11-24 15:58:26.70459701
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling HOF              ( src/HOF.hs, interpreted )
+Ok, one module loaded.
+2022-11-24 15:58:54.524285173
+[?1h=>>> sort votes
+[?1l>["Blue","Blue","Blue","Green","Red","Red"]
+2022-11-24 15:59:06.128737181
+[?1h=>>> group it
+[?1l>[["Blue","Blue","Blue"],["Green"],["Red","Red"]]
+2022-11-24 15:59:45.36178214
+[?1h=>>> map head it
+[?1l>["Blue","Green","Red"]
+2022-11-24 16:00:52.465880054
+[?1h=>>> so[K[Ksort votes
+[?1l>["Blue","Blue","Blue","Green","Red","Red"]
+2022-11-24 16:02:08.243573464
+[?1h=>>> 
+[?1l>2022-11-24 16:02:08.464116342
+[?1h=>>> hoge = map ((,) <*> length) . sort[K[K[K[Kgroup . sort  <*> length) . group . sort[27D. <*> length) . group . sort[27D  <*> length) . group . sort[27Dh <*> length) . group . sort [A[23Ce <*> length) . group . sor t[A[24Ca <*> length) . group . so rt[A[25Cd <*> length) . group . s ort[A[26C
+[K[A>>> hoge = map ((,) . head <*> length) . group . sort[27D>>> hoge = map ((,) . head <*> length) . group . sort[27D
+[?1l>2022-11-24 16:03:26.895246953
+[?1h=>>> hoge votes
+[?1l>[("Blue",3),("Green",1),("Red",2)]
+2022-11-24 16:03:41.55068359
+[?1h=>>> sortBy [K[K[K[K[K[K[Kimport Data.Ord
+[?1l>2022-11-24 16:04:30.550021448
+[?1h=>>> it
+[?1l>[("Blue",3),("Green",1),("Red",2)]
+2022-11-24 16:04:37.335142134
+[?1h=>>> sortBy (comp[K[K[K[Kflip (comparing snd)) it
+[?1l>[("Blue",3),("Red",2),("Green",1)]
+2022-11-24 16:05:13.704826122
+[?1h=>>> >>> >>> :r
+[?1l>[1 of 1] Compiling HOF              ( src/HOF.hs, interpreted )
+Ok, one module loaded.
+2022-11-24 16:15:40.919725289
+[?1h=>>> results votes
+[?1l>[("Blue",3),("Red",2),("Green",1)]
+2022-11-24 16:15:46.927789696
+[?1h=>>> 
