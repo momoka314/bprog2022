@@ -1,3 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+if [ $(pgrep "script") ]; then
+        echo "already run script"
+else
+        script -a -f -c bash programming_session.log
+fi
 
-script -a -f -c bash programming_session.log
+
