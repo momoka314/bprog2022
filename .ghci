@@ -1,5 +1,4 @@
 import Data.Time
 _prompt _ n = (utcToLocalTime <$> getCurrentTimeZone <*> getCurrentTime) >>= print >> return ">>> "
 :set prompt-function _prompt
-:set -XLambdaCase -XMultiWayIf -XOverloadedStrings -XBangPatterns -XScopedTypeVariables
-:set editor 'cat -n'
+

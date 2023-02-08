@@ -26,6 +26,7 @@ dependencies:
 - utf8-string
 - hspec
 - main-tester
+- doctest
 
 library:
   source-dirs: src
